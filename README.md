@@ -24,6 +24,8 @@ of installing meetup\_cal yourself, you can use this hosted version:
 
 [http://meetup-calendar.herokuapp.com/meetup/YourMeetupGroupURL](http://meetup-calendar.herokuapp.com/meetup/YourMeetupGroupURL)
 
+With YourMeetupGroupURL being the Meetup Group URL, eg nystartrek.
+
 If you want to embed it to your own website, use an iframe - similar to
 Youtube or Voice Republic:
 
