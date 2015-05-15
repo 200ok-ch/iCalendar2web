@@ -22,14 +22,17 @@ website. You can see this as a demo
 meetup\_cal is generic in that it can render any public Meetup schedule. Instead
 of installing meetup\_cal yourself, you can use this hosted version:
 
-    http://meetup-calendar.herokuapp.com/meetup/YourMeetupGroupURL
+[http://meetup-calendar.herokuapp.com/meetup/YourMeetupGroupURL](http://meetup-calendar.herokuapp.com/meetup/YourMeetupGroupURL)
 
 If you want to embed it to your own website, use an iframe - similar to
 Youtube or Voice Republic:
 
-    ```<iframe width="800px" height="800px"
+```html
+<iframe width="800px" height="800px"
     src="http://meetup-calendar.herokuapp.com/meetup/Herrliberg-Sinopa-Zen-House-Meditation"
-    frameborder="0"></iframe>```
+    frameborder="0">
+</iframe>
+```
 
 If you want to use meetup_\cal as a Service, please note that it will display
 times in UTC+2.
