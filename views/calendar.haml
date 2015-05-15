@@ -26,7 +26,7 @@
     %tbody
       - @results.reject { |res| res['name'] != practice }.each do |res|
         %tr
-          %td= Time.at(res['time']/1000).strftime("%Y-%m-%d at %H:%M")
+          %td= Time.at(res['time']/1000).localtime("+02:00").strftime("%Y-%m-%d at %H:%M")
           %td= res['duration'] && res['duration']/60/1000
 
 

@@ -31,6 +31,9 @@ Youtube or Voice Republic:
     src="http://meetup-calendar.herokuapp.com/meetup/Herrliberg-Sinopa-Zen-House-Meditation"
     frameborder="0"></iframe>```
 
+If you want to use meetup_\cal as a Service, please note that it will display
+times in UTC+2.
+
 # Deployment
 
 ## Heroku
