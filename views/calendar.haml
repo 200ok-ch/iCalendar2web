@@ -1,0 +1,13 @@
+%table
+  %thead
+    %td
+      Time
+    %td
+      Practice
+    %td
+      Duration in minutes
+  - @results.each do |res|
+    %tr
+      %td= Time.at(res['time']/1000).strftime("%Y-%m-%d at %H:%M")
+      %td= res['name']
+      %td= res['duration'] && res['duration']/60/1000
