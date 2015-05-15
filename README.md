@@ -7,8 +7,7 @@ schedule to another website.
 
 This is a Sinatra project that solves this issue by accessing the Meetup API
 and simply rendering an HTML table. Hosting can be done on Heroku to get you
-started. The table is explicitly not styled so you can do that from your
-consuming application.
+started.
 
 ## Demo
 

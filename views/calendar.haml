@@ -1,3 +1,17 @@
+:css
+  body {
+    font-family: "Oswald",sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  table {
+    text-align: left;
+  }
+  th {
+    width: 59%;
+    background-color: lightgrey;
+  }
+
 - practices = @results.map { |h| h['name'] }.uniq
 
 - practices.each do |practice|
@@ -5,10 +19,11 @@
 
   %table
     %thead
-      %td
+      %th
         Time
-      %td
+      %th
         Duration in minutes
+    %tbody
       - @results.reject { |res| res['name'] != practice }.each do |res|
         %tr
           %td= Time.at(res['time']/1000).strftime("%Y-%m-%d at %H:%M")
