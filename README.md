@@ -17,6 +17,19 @@ updated on Meetup. However, I want that schedule also to be seen on our
 website. You can see this as a demo
 [here](http://insopor-zen-academy.com/zen-houses/sinopa-zen-house-menu/schedule).
 
+## Use as a Service
+
+meetup\_cal is generic in that it can render any public Meetup schedule. Instead
+of installing meetup\_cal yourself, you can use this hosted version:
+
+    http://meetup-calendar.herokuapp.com/meetup/YourMeetupGroupURL
+
+If you want to embed it to your own website, use an iframe - similar to
+Youtube or Voice Republic:
+
+    ```<iframe width="800px" height="800px"
+    src="http://meetup-calendar.herokuapp.com/meetup/Herrliberg-Sinopa-Zen-House-Meditation"
+    frameborder="0"></iframe>```
 
 # Deployment
 
