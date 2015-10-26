@@ -26,6 +26,11 @@ of installing meetup\_cal yourself, you can use this hosted version:
 
 With YourMeetupGroupURL being the Meetup Group URL, eg nystartrek.
 
+If you want to use meetup_\cal as a Service, please note that it will display
+times for the Europe/Berlin timezone.
+
+### iFrame
+
 If you want to embed it to your own website, use an iframe - similar to
 Youtube or Voice Republic:
 
@@ -36,8 +41,19 @@ Youtube or Voice Republic:
 </iframe>
 ```
 
-If you want to use meetup_\cal as a Service, please note that it will display
-times in UTC+2.
+
+### Load via Ajax
+
+You can also load the html via Ajax into your page. For example if you want to show a loading spinner upfront. The required access-control headers are set on this service, so no worries about CORS.
+
+```
+$.get("http://meetup-calendar.herokuapp.com/meetup/MyMeetupGroup", function(data) {
+  $("#my-schedule").html(data);
+});
+```
+
+
+
 
 # Deployment
 
