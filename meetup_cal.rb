@@ -8,6 +8,8 @@ configure do
   set :protection, except: [:frame_options]
 end
 
+require 'active_support/all'
+
 MEETUP_API_KEY = ENV['MEETUP_API_KEY']
 get '/meetup/:meetup_group_url' do
   url = "http://api.meetup.com/2/events?offset=0&format=json&limited_events=False" +

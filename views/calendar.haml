@@ -27,10 +27,11 @@
         Time
     %tbody
       - @results.reject { |res| res['name'] != practice }.each do |res|
-        - start_time = Time.at(res['time']/1000).localtime("+02:00")
-        - duration = res['duration'] ? res['duration']/1000 : 0
         %tr
-          %td= start_time.strftime("%Y-%m-%d, %a")
-          %td= start_time.strftime("%H:%M") + " - " + (start_time + duration).strftime("%H:%M")
+          - Time.use_zone("Europe/Zurich") do
+            - start_time = Time.zone.at(res['time']/1000)
+            - duration = res['duration'] ? res['duration']/1000 : 0
+            %td= start_time.strftime("%Y-%m-%d, %a")
+            %td= start_time.strftime("%H:%M") + " - " + (start_time + duration).strftime("%H:%M")
 
 

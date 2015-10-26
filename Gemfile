@@ -6,3 +6,6 @@ gem 'haml'
 gem 'rerun'
 gem 'pry'
 
+# time zone / daylight savings time support
+gem 'activesupport'
+
