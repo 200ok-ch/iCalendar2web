@@ -1,16 +1,14 @@
 :css
-  body {
+  table.meetup_cal {
+    text-align: left;
     font-family: "Oswald",sans-serif;
     font-weight: 300;
     letter-spacing: 1px;
   }
-  table {
-    text-align: left;
-  }
-  th {
+  table.meetup_cal th {
     background-color: lightgrey;
   }
-  th:first-child {
+  table.meetup_cal th:first-child {
     width: 11em;
   }
 
@@ -19,7 +17,7 @@
 - practices.each do |practice|
   %h2= practice
 
-  %table
+  %table.meetup_cal
     %thead
       %th
         Date
