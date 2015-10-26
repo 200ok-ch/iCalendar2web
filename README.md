@@ -46,7 +46,7 @@ Youtube or Voice Republic:
 
 You can also load the html via Ajax into your page. For example if you want to show a loading spinner upfront. The required access-control headers are set on this service, so no worries about CORS.
 
-```
+```javascript
 $.get("http://meetup-calendar.herokuapp.com/meetup/MyMeetupGroup", function(data) {
   $("#my-schedule").html(data);
 });
