@@ -12,6 +12,7 @@ require 'active_support/all'
 
 MEETUP_API_KEY = ENV['MEETUP_API_KEY']
 get '/meetup/:meetup_group_url' do
+  headers 'Access-Control-Allow-Origin' => '*'
   url = "http://api.meetup.com/2/events?offset=0&format=json&limited_events=False" +
     "&group_urlname=#{params['meetup_group_url']}" +
     "&photo-host=public&page=20&fields=&order=time&desc=false&status=upcoming&sign=true" +
