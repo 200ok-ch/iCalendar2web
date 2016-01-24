@@ -22,6 +22,11 @@ get '/meetup/:meetup_group_url' do
 
   parsed = JSON.parse(res)
   @results = parsed['results']
+
+  if params['filter']
+    @results.select! { |res| res['name'] =~ /#{params['filter']}/i }
+  end
+
   haml :calendar
 end
 
