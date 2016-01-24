@@ -56,6 +56,8 @@ $.get("http://meetup-calendar.herokuapp.com/meetup/MyMeetupGroup", function(data
 meetup\_cal takes the following parameters:
 
 * 'filter': takes a RegExp to filter the name of the meetup
+* 'show\_from\_to': when set, this changes the default look from |date|time| to |date from|date to|
+* 'limit': set a limit of how often a specific meetup shall be repeated in the table, the default is 25
 
 # Deployment
 
