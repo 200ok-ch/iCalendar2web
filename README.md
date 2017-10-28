@@ -36,7 +36,7 @@ Youtube or Voice Republic:
 
 ```html
 <iframe width="800px" height="800px"
-    src="http://meetup-calendar.herokuapp.com/meetup/Herrliberg-Sinopa-Zen-House-Meditation"
+    src="http://meetup-calendar.herokuapp.com/meetup/Zen-Meditation-Schweiz"
     frameborder="0">
 </iframe>
 ```
