@@ -15,7 +15,7 @@ As a tutor of the [Insopor Zen Academy](http://insopor-zen-academy.com), I run
 the Sinopa Zen House. There is a daily meditation schedule that regularly
 updated on Meetup. However, I want that schedule also to be seen on our
 website. You can see this as a demo
-[here](insopor-zen-academy.com/zen-meditation-schedule/).
+[here](https://zen-temple.net/zen-temples/lambda-zen-temple/zen-meditation-schedule/).
 
 ## Use as a Service
 
