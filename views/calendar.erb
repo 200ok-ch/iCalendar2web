@@ -1,0 +1,74 @@
+<style>
+  table.meetup_cal {
+    text-align: left;
+    font-family: "Oswald",sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  table.meetup_cal th {
+    background-color: lightgrey;
+  }
+  table.meetup_cal th:first-child {
+    width: 11em;
+  }
+  table tr:nth-child(n+<%= @limit %>) {
+      display: none;
+  }
+</style>
+
+<% event_names = @results.map { |h| h[:name] }.uniq %>
+
+<% event_names.each do |event_name| %>
+  <h2>
+    <%= event_name %>
+  </h2>
+  <table class="meetup_cal">
+    <% unless @show_from_to %>
+      <thead>
+        <th>
+          Date
+        </th>
+        <th>
+          Time
+        </th>
+      </thead>
+      <tbody>
+        <% @results.each do |res| %>
+          <tr>
+            <% start_time = res[:start_time] %>
+            <% end_time = res[:end_time] %>
+            <td>
+              <%= start_time.strftime("%Y-%m-%d, %a") %>
+            </td>
+            <td>
+              <%= start_time.strftime("%H:%M") + " - " + end_time.strftime("%H:%M") %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% else %>
+      <thead>
+        <th>
+          From
+        </th>
+        <th>
+          To
+        </th>
+      </thead>
+      <tbody>
+        <% @results.reject { |res| res[:name] != event_name }.each do |res| %>
+          <tr>
+            <% start_time = res[:start_time] %>
+            <% end_time = res[:end_time] %>
+            <td>
+              <%= start_time.strftime("%Y-%m-%d, %a, %H:%M") %>
+            </td>
+            <td>
+              <%= end_time.strftime("%Y-%m-%d, %a, %H:%M") %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% end %>
+  </table>
+<% end %>

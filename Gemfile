@@ -1,11 +1,12 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'sinatra'
+source 'https://rubygems.org'
+ruby '2.5.0'
+
+gem 'icalendar'
 gem 'json'
-gem 'haml'
-gem 'rerun'
-gem 'pry'
+gem 'sinatra'
+gem 'sinatra-contrib'
 
 # time zone / daylight savings time support
 gem 'activesupport'
-
