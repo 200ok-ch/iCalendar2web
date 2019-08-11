@@ -34,16 +34,18 @@
       </thead>
       <tbody>
         <% @results.each do |res| %>
-          <tr>
+          <% if res[:name] == event_name %>
             <% start_time = res[:start_time] %>
             <% end_time = res[:end_time] %>
-            <td>
-              <%= start_time.strftime("%Y-%m-%d, %a") %>
-            </td>
-            <td>
-              <%= start_time.strftime("%H:%M") + " - " + end_time.strftime("%H:%M") %>
-            </td>
-          </tr>
+            <tr>
+              <td>
+                <%= start_time.strftime("%Y-%m-%d, %a") %>
+              </td>
+              <td>
+                <%= start_time.strftime("%H:%M") + " - " + end_time.strftime("%H:%M") %>
+              </td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     <% else %>

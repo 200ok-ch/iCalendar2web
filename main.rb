@@ -16,17 +16,20 @@ end
 
 require 'active_support/all'
 
-get '/meetup/:meetup_group_url' do
+ICALENDAR_URL = ENV['ICALENDAR_URL']
+
+def handle_events(params)
   headers 'Access-Control-Allow-Origin' => '*'
   feed =
     URI
-    .parse("https://www.meetup.com/#{params['meetup_group_url']}/events/ical/")
+    .parse(ICALENDAR_URL.gsub(/PLACEHOLDER/, params['qualifier']))
     .read
 
   events = Icalendar::Event.parse(feed)
 
   @results = events.map do |e|
-    timezone = e.dtstart.ical_params['tzid'].first
+    tmp_tz = e.dtstart.ical_params['tzid']
+    timezone = tmp_tz.is_a?(Array) ? tmp_tz.first : tmp_tz
 
     Time.use_zone(timezone) do
       start_time = Time.parse(e.dtstart.to_s)
@@ -56,6 +59,16 @@ get '/meetup/:meetup_group_url' do
   end
 end
 
+# This is a legacy endpoint from back when this microservice was
+# primary for showing events from meetup.com groups
+get '/meetup/:qualifier' do
+  handle_events(params)
+end
+
+get '/calendar/:qualifier' do
+  handle_events(params)
+end
+
 get '/' do
-  'Please visit /meetup/YourMeetupGroupURL'
+  'Please visit /calendar/YourQualifier'
 end

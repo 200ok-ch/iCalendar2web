@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-require './meetup_cal'
+require './main'
 run Sinatra::Application
